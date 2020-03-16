@@ -24,6 +24,9 @@ public class Main {
      * @throws TechnicalException sur erreur technique
      */
     public static void main(String[] pArgs) throws TechnicalException {
+    	ApplicationContext vApplicationContext = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
+    	ManagerFactory vManagerFactory = vApplicationContext.getBean("managerFactory", ManagerFactory.class);
+    	
         try {
             if (pArgs.length < 1) {
                 throw new TechnicalException("Veuillez préciser le traitement à effectuer !");
